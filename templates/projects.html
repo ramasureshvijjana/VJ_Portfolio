@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rama Suresh Vijjana (Suresh VJ) | Data Scientist</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/coding.webp" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Main CSS File -->
+  <link href="static/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="dark-background">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Project Section -->
+    <section id="project" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <h5><p>Explore the highlights of my work through these innovative and impactful projects that showcase my expertise and creativity in Artificial Intelligence and Data Science.</p></h5>
+      </div><!-- End Section Title -->
+
+        <!-- Filters -->
+        <div class="filter-container" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <ul class="filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter="*" class=".learning">Learning</li>
+                <li data-filter=".filter-ml">Machine Learning</li>
+                <!-- <li data-filter=".filter-genai">Generative AI</li> -->
+                <li data-filter=".filter-nlp">Natural Language Processing</li>
+                <!-- <li data-filter=".filter-cv">Computer Vision</li> -->
+            </ul>
+        </div><!-- End Filters -->
+
+        <!-- Projects -->
+        <div class="projects-row">
+
+            {% for project in projects %}
+            <div class="project-container {{ project['Filters'] }}">
+                <div class="image-box">
+                    <a href="{{ project['Demo Link'] }}"><img src="{{ project['Image'] }}" alt="{{ project['Title'] }}"></a>
+                </div>
+                <div class="description-box">
+                    <h5>{{ project['Title'] }}
+                        <a href="{{ project['GitHub Link'] }}" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </h5>
+                    <p>{{ project['Description'] }}</p>
+                    <div class="tags">
+                        <a href="{{ project['GitHub Link'] }}"><span class="tag">GitHub Code</span></a>
+                        <a href="{{ project['Demo Link'] }}"><span class="tag">Access Product</span></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="project-container filter-nlp">
+              <div class="image-box">
+                  <img src="static/assets/img/project/NLP-With-HuggingFace1.webp" alt="SmartChat-AI">
+              </div>
+              <div class="description-box">
+                  <h5>NLP with Hugging Face
+                      <a href="https://github.com/Hamadzki/NLP-with-HuggingFace" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                  </h5>
+                  <p>This project is a comprehensive deep dive into Natural Language Processing (NLP) using Hugging Face's Transformer models. It covers various NLP tasks such as emotion prediction, text summarization, sentiment analysis, and fine-tuning, all demonstrated through practical Jupyter notebooks.</p>
+                  <div class="tags">
+                      <span class="tag">Hugging Face</span>
+                      <span class="tag">Fine-Tuning</span>
+                      <span class="tag">Transformers</span>
+                      <span class="tag">PyTorch</span>
+                  </div>
+              </div>
+          </div>
+            
+            <div class="project-container filter-nlp">
+              <div class="image-box">
+                  <img src="static/assets/img/project/NLP-Specialization.webp" alt="SmartChat-AI">
+              </div>
+              <div class="description-box">
+                  <h5>NLP-Specialization
+                      <a href="https://github.com/Hamadzki/Natural-Language-Processing-Specialization" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                  </h5>
+                  <p>
+                    Completed the Natural Language Processing Specialization from DeepLearning.AI, gained practical experience with sentiment analysis, word embeddings, and attention models. Worked on projects like Twitter sentiment analysis, neural translation, and chatbots, using RNNs, LSTMs, and attention mechanisms for real-world applications.</p>
+                  <div class="tags">
+                      <span class="tag">Sequence Models</span>
+                      <span class="tag">Probabilistic Models</span>
+                      <span class="tag">Language Modeling</span>
+                      <span class="tag">Attention Models</span>
+                  </div>
+              </div>
+          </div>
+
+
+            <div class="project-container filter-ml">
+              <div class="image-box">
+                  <img src="static/assets/img/project/crypto.webp" alt="SmartChat-AI">
+              </div>
+              <div class="description-box">
+                  <h5>Crypto Price Prediction
+                      <a href="https://github.com/Hamadzki/crypto-price-prediction" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                  </h5>
+                  <p>This project uses the fbprophet model for time series analysis and cryptocurrency price prediction, along with exploratory data analysis. A web app allows real-time price predictions from uploaded historical data.</p>
+                  <div class="tags">
+                      <span class="tag">Time Series Analysis</span>
+                      <span class="tag">fbprophet</span>
+                      <span class="tag">Forecasting</span>
+                      <span class="tag">Data Visualization</span>
+                  </div>
+              </div>
+          </div>
+
+            <div class="project-container filter-ml">
+                <div class="image-box">
+                    <img src="static/assets/img/project/flight_price.webp" alt="Flight Price Prediction">
+                </div>
+                <div class="description-box">
+                    <h5>Flight Price Prediction
+                        <a href="https://github.com/Hamadzki/flight_price_prediction" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </h5>
+                    <p>Flight Price Prediction Model predicts flight prices using machine learning. It covers data cleaning, EDA, model building, and deployment, with a Streamlit app for user data uploads and price prediction.</p>
+                    <div class="tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Random Forest</span>
+                        <span class="tag">XGBoost</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-container filter-ml">
+                <div class="image-box">
+                    <img src="static/assets/img/project/kidney_disease.webp" alt="Kidney Disease Prediction">
+                </div>
+                <div class="description-box">
+                    <h5>Kidney Disease Prediction
+                        <a href="https://github.com/Hamadzki/kidney_disease_prediction" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </h5>
+                    <p>
+                      The Kidney Disease Prediction project uses machine learning for early CKD detection, covering data wrangling, EDA, feature engineering, and model building with Python and Scikit-learn.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Data wrangling</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-container filter-ml">
+                <div class="image-box">
+                    <img src="static/assets/img/project/hotel_price_prediction.webp" alt="Hotel Price Prediction">
+                </div>
+                <div class="description-box">
+                    <h5>Hotel Booking Prediction
+                        <a href="https://github.com/Hamadzki/hotel_booking_prediction" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </h5>
+                    <p>The Hotel Booking Prediction project uses machine learning for forecasting. It involves data wrangling, EDA, feature encoding, and model evaluation, with an ML model predicting booking outcomes.</p>
+                    <div class="tags">
+                        <span class="tag">classification</span>
+                        <span class="tag">Decision Tree</span>
+                        <span class="tag">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-container filter-ml">
+                <div class="image-box">
+                    <img src="static/assets/img/project/ibm_project.webp" alt="SpaceX Project">
+                </div>
+                <div class="description-box">
+                    <h5>SpaceX Project
+                        <a href="https://github.com/Hamadzki/IBM_Data_Science_Capstone_Project" title="More Details" class="github-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </h5>
+                    <p>This project predicts the successful landing of the Falcon 9 rocket's first stage to estimate cost savings. It involves data collection, EDA, and machine learning, with results visualized through a Dash web app.</p>
+                    <div class="tags">
+                        <span class="tag">Web Scraping,</span>
+                        <span class="tag">Dash</span>
+                        <span class="tag">API</span>
+                        <span class="tag">Predictive Modeling</span>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" ></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="static/assets/vendor/aos/aos.js" defer></script>
+  <script src="static/assets/js/main.js" defer></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="static/assets/js/project.js" defer></script>
+
+  <!-- usefull for certificate zooming swipping and closing -->
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js" ></script>
+
+  <script src="static/assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+
+
+</body>
+
+</html>
